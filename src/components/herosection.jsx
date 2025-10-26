@@ -12,17 +12,54 @@ const HeroSection = () => {
   
   // Features and Why Us content
   const features = [
-    { icon: "🚀", text: "Lightning Fast" },
-    { icon: "🛡️", text: "Enterprise Security" },
-    { icon: "🌟", text: "Modern Design" },
-    { icon: "⚡", text: "High Performance" },
+    { 
+      icon: "🏠", 
+      text: "Home Page",
+      description: "Quick access to sevas, notifications, and an easy navigation menu"
+    },
+    { 
+      icon: "🙏", 
+      text: "Seva Booking",
+      description: "Browse and book daily, monthly, or special sevas effortlessly"
+    },
+    { 
+      icon: "✨", 
+      text: "Donations & Events",
+      description: "A one-stop space for making donations and viewing upcoming events"
+    },
+    { 
+      icon: "🔔", 
+      text: "Personalized Notifications",
+      description: "Get timely updates on sevas, events, and booking reminders"
+    },
   ];
 
-  const whyUs = [
-    { icon: "💪", text: "Trusted by Users" },
-    { icon: "🎯", text: "24/7 Support" },
-    { icon: "✨", text: "Seamless Experience" },
-    { icon: "🔄", text: "Regular Updates" },
+  const adminFeatures = [
+    { 
+      icon: "📊", 
+      text: "Dashboard View",
+      description: "A comprehensive overview of temple activities (donations, bookings, and participation, etc.)"
+    },
+    { 
+      icon: "📅", 
+      text: "Seva Booking",
+      description: "Organize and update seva details with ease, tracking availability and reminders"
+    },
+    { 
+      icon: "📈", 
+      text: "Smart Reporting",
+      description: "Access real-time insights on revenue, seva popularity, and donor activity"
+    },
+    { 
+      icon: "🏛️", 
+      text: "Multi Branch Control",
+      description: "Manage operations across multiple temple branches from one centralized dashboard"
+    },
+    { 
+      icon: "📦", 
+      text: "Asset Mapping",
+      description: "Categorize and track temple assets for optimized and efficient utilization"
+    }
   ];
 
   // Check if device is mobile
@@ -107,10 +144,17 @@ const HeroSection = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: index * 0.1 }}
-        className="flex items-center space-x-3 mb-6"
+        className="flex items-start space-x-4 mb-8"
       >
-        <span className="text-2xl">{item.icon}</span>
-        <span className="text-lg font-medium">{item.text}</span>
+        <span className="text-3xl mt-1">{item.icon}</span>
+        <div className="flex flex-col">
+          <span className="text-xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+            {item.text}
+          </span>
+          <span className="text-sm text-gray-300 mt-1 leading-relaxed">
+            {item.description}
+          </span>
+        </div>
       </motion.div>
     ));
   };
@@ -133,9 +177,9 @@ const HeroSection = () => {
         variants={leftPanelVariants}
       >
         <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-          Why Choose Us
+          Admin Features
         </h2>
-        {renderItems(whyUs)}
+        {renderItems(adminFeatures)}
       </motion.div>
 
       {/* Central Image */}
