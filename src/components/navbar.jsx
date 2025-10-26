@@ -77,7 +77,7 @@ const Navbar = () => {
                   className={`font-medium transition-colors ${
                     isScrolled
                       ? "text-gray-800 hover:text-[#be1a1f]"
-                      : "text-white hover:text-[#f7a604]"
+                      : "text-white font-semibold hover:text-[#f7a604]"
                   }`}
                 >
                   {item.label}
