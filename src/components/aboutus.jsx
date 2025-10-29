@@ -45,6 +45,13 @@ const AboutUs = () => {
             custom={0}
             className="text-center max-w-4xl mx-auto"
           >
+            <motion.span 
+              variants={fadeInUp}
+              custom={0}
+              className="text-5xl font-semibold uppercase tracking-wider text-[#be1a1f] block mb-4"
+            >
+              About Us
+            </motion.span>
             <h1 className="text-5xl font-bold mb-6">
               <span className="bg-gradient-to-r from-[#be1a1f] via-[#da4d01] to-[#f7a604] text-transparent bg-clip-text">
                 Transforming Temple Experiences
