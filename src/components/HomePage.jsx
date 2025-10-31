@@ -31,7 +31,7 @@ const HomePage = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 pt-20 lg:pt-0">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 pt-20 lg:pt-0">
       {/* Decorative Elements */}
       <div className="absolute top-0 right-0 w-64 h-64 lg:w-96 lg:h-96 bg-[#f7a604]/10 rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 left-0 w-64 h-64 lg:w-96 lg:h-96 bg-[#be1a1f]/10 rounded-full blur-3xl"></div>
@@ -71,26 +71,19 @@ const HomePage = () => {
               animate="visible"
               variants={fadeInUp}
               custom={3}
-              className="flex flex-col sm:flex-row justify-center lg:justify-start gap-3 lg:gap-4"
+              className="flex justify-center lg:justify-start"
             >
-              <Link 
-                href="/download"
+              <a 
+                href="https://forms.gle/9MkeHa5MvMoLfWL47"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-6 py-3 lg:px-8 lg:py-4 text-sm lg:text-base text-white font-medium bg-gradient-to-r from-[#be1a1f] to-[#da4d01] rounded-full hover:shadow-lg hover:shadow-[#be1a1f]/20 transition-all duration-300 flex items-center justify-center"
-              >
-                <svg className="w-5 h-5 lg:w-6 lg:h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 10v6m0 0l-3-3m3 3l3-3M3 17V7a2 2 0 012-2h6l2 2h6a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
-                </svg>
-                Download App
-              </Link>
-              <Link 
-                href="/demo"
-                className="px-6 py-3 lg:px-8 lg:py-4 text-sm lg:text-base text-gray-700 font-medium border-2 border-gray-300 rounded-full hover:border-[#be1a1f] hover:text-[#be1a1f] transition-all duration-300 flex items-center justify-center"
               >
                 <svg className="w-5 h-5 lg:w-6 lg:h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
                 </svg>
                 Book a Demo
-              </Link>
+              </a>
             </motion.div>
           </div>
 
