@@ -31,7 +31,7 @@ const AboutUs = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+    <div id="about" className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
       {/* Hero Section */}
       <section className="pt-32 pb-20 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#f7a604]/10 rounded-full blur-3xl"></div>
@@ -175,7 +175,7 @@ const AboutUs = () => {
       </section>
 
       {/* Join Us Section */}
-      <section className="py-20 bg-gray-900 text-white relative">
+      <section className="py-20 bg-gray-100 text-gray-900 relative">
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#f7a604]/10 rounded-full blur-3xl"></div>
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#be1a1f]/10 rounded-full blur-3xl"></div>
         
@@ -188,20 +188,22 @@ const AboutUs = () => {
             className="max-w-4xl mx-auto text-center"
           >
             <h2 className="text-4xl font-bold mb-8">Join Us</h2>
-            <p className="text-xl mb-10 leading-relaxed">
+            <p className="text-xl mb-10 leading-relaxed text-gray-800">
               This is not just about software. It is about community, culture, and a shared future. 
               If you care about temples, heritage, and faith, we welcome you to be a part of Mantap. 
               Together, we can bring temples and devotees back into harmony for generations ahead.
             </p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-[#be1a1f] to-[#da4d01] rounded-full hover:shadow-lg hover:shadow-[#be1a1f]/20 transition-all duration-300"
+            <a
+              href="https://forms.gle/UtGaAjgy6a6aDiXo8"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-[#be1a1f] to-[#da4d01] text-white rounded-full hover:shadow-lg hover:shadow-[#be1a1f]/20 transition-all duration-300"
             >
               Be Part of Our Journey
               <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
-            </Link>
+            </a>
           </motion.div>
         </div>
       </section>
