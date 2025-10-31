@@ -34,7 +34,7 @@ const HeroSection = () => {
     },
   ];
 
-  const adminFeatures = [
+  const templeFeatures = [
     { 
       icon: "📊", 
       text: "Dashboard View",
@@ -168,6 +168,42 @@ const HeroSection = () => {
       role="banner"
       aria-label="Hero section with interactive panels"
     >
+      {/* Left Arrow Indicator */}
+      <motion.div
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-30 pointer-events-none"
+        initial={{ opacity: 0.3, x: 0 }}
+        animate={{
+          opacity: hoverSide === 'left' ? 0 : 0.6,
+          x: hoverSide === 'left' ? -20 : 0,
+        }}
+        transition={{ duration: 0.3 }}
+      >
+        <div className="flex flex-col items-center">
+          <svg className="w-8 h-8 text-white drop-shadow-lg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M15 19l-7-7 7-7" />
+          </svg>
+          <span className="text-white text-xs mt-2 font-semibold drop-shadow-lg">Temple</span>
+        </div>
+      </motion.div>
+
+      {/* Right Arrow Indicator */}
+      <motion.div
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-30 pointer-events-none"
+        initial={{ opacity: 0.3, x: 0 }}
+        animate={{
+          opacity: hoverSide === 'right' ? 0 : 0.6,
+          x: hoverSide === 'right' ? 20 : 0,
+        }}
+        transition={{ duration: 0.3 }}
+      >
+        <div className="flex flex-col items-center">
+          <svg className="w-8 h-8 text-white drop-shadow-lg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 5l7 7-7 7" />
+          </svg>
+          <span className="text-white text-xs mt-2 font-semibold drop-shadow-lg">Devotee</span>
+        </div>
+      </motion.div>
+
       {/* Left Panel - Why Us */}
       <motion.div
         className="absolute left-0 top-0 h-full w-1/3 flex flex-col justify-center items-start px-12
@@ -177,9 +213,9 @@ const HeroSection = () => {
         variants={leftPanelVariants}
       >
         <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-          Admin Features
+          Temple Features
         </h2>
-        {renderItems(adminFeatures)}
+        {renderItems(templeFeatures)}
       </motion.div>
 
       {/* Central Image */}
@@ -274,7 +310,7 @@ const HeroSection = () => {
         variants={rightPanelVariants}
       >
         <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-          Key Features
+          Devotee Features
         </h2>
         {renderItems(features)}
       </motion.div>
