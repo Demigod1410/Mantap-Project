@@ -82,7 +82,7 @@ const WhyUs = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+    <div id="why-us" className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
       {/* Hero Section */}
       <section className="pt-32 pb-20 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#f7a604]/10 rounded-full blur-3xl"></div>
@@ -254,7 +254,7 @@ const WhyUs = () => {
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 bg-gray-900 text-white relative">
+      <section className="py-20 bg-gray-100 relative">
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#f7a604]/10 rounded-full blur-3xl"></div>
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#be1a1f]/10 rounded-full blur-3xl"></div>
         
@@ -266,14 +266,19 @@ const WhyUs = () => {
             variants={fadeInUp}
             className="max-w-3xl mx-auto text-center"
           >
-            <h2 className="text-3xl font-bold mb-6">The Mantap Promise</h2>
-            <p className="text-xl mb-10">
+            <h2 className="text-3xl font-bold mb-6 text-gray-900">The Mantap Promise</h2>
+            <p className="text-xl mb-10 text-gray-800">
               With Mantap, temples and devotees don't just use technology—they join a movement 
               built on respect, transparency, and the preservation of our shared cultural heritage.
             </p>
-            <button className="px-8 py-4 bg-gradient-to-r from-[#be1a1f] to-[#da4d01] rounded-full hover:shadow-lg hover:shadow-[#be1a1f]/20 transition-all duration-300">
+            <a 
+              href="https://forms.gle/UtGaAjgy6a6aDiXo8"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-8 py-4 bg-gradient-to-r from-[#be1a1f] to-[#da4d01] text-white rounded-full hover:shadow-lg hover:shadow-[#be1a1f]/20 transition-all duration-300"
+            >
               Join the Movement
-            </button>
+            </a>
           </motion.div>
         </div>
       </section>
