@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 
 const Navbar = () => {
@@ -50,8 +51,17 @@ const Navbar = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
           >
-            <Link href="/" className="text-2xl font-bold">
-              <span className="bg-gradient-to-r from-[#be1a1f] via-[#da4d01] to-[#f7a604] text-transparent bg-clip-text">
+            <Link href="/" className="flex items-center space-x-3">
+              <div className="relative w-10 h-10">
+                <Image
+                  src="/mantap-logo.jpg"
+                  alt="Mantap Logo"
+                  fill
+                  className="object-contain"
+                  priority
+                />
+              </div>
+              <span className="text-2xl font-bold bg-gradient-to-r from-[#be1a1f] via-[#da4d01] to-[#f7a604] text-transparent bg-clip-text">
                 MANTAP
               </span>
             </Link>
@@ -60,11 +70,11 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-10">
             {[
-              { href: "/", label: "Home" },
-              { href: "/sevas", label: "Sevas" },
-              { href: "/events", label: "Events" },
-              { href: "/notifications", label: "Notifications" },
-              { href: "/about", label: "About" }
+              { href: "#home", label: "Home" },
+              { href: "#features", label: "Features" },
+              { href: "#about", label: "About Us" },
+              { href: "#why-us", label: "Why Us" },
+              { href: "#contact", label: "Contact Us" }
             ].map((item, index) => (
               <motion.div
                 key={item.href}
@@ -72,65 +82,17 @@ const Navbar = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 * (index + 1) }}
               >
-                <Link
+                <a
                   href={item.href}
-                  className={`font-medium transition-colors ${
+                  onClick={(e) => scrollToElement(e, item.href.substring(1))}
+                  className={`font-medium transition-colors cursor-pointer ${
                     isScrolled
                       ? "text-gray-800 hover:text-[#be1a1f]"
                       : "text-white font-semibold hover:text-[#f7a604]"
                   }`}
                 >
                   {item.label}
-                </Link>
-              </motion.div>
-            ))}
-            <motion.button
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6 }}
-              onClick={(e) => scrollToElement(e, 'footer')}
-              className={`font-medium transition-colors cursor-pointer ${
-                isScrolled
-                  ? "text-gray-800 hover:text-[#be1a1f]"
-                  : "text-white hover:text-[#f7a604]"
-              }`}
-            >
-              Contact
-            </motion.button>
-          </div>
-
-          {/* Auth Buttons */}
-          <div className="hidden md:flex space-x-4">
-            {[
-              { 
-                href: "/register",
-                label: "Sign Up",
-                className: "px-6 py-2 border rounded-full transition-all duration-300",
-                style: isScrolled
-                  ? "text-[#be1a1f] border-[#be1a1f] hover:bg-[#be1a1f] hover:text-white"
-                  : "text-white border-white hover:bg-white hover:text-[#be1a1f]"
-              },
-              {
-                href: "/login",
-                label: "Login",
-                className: "px-6 py-2 rounded-full transition-all duration-300",
-                style: isScrolled
-                  ? "bg-[#be1a1f] text-white hover:bg-[#a01217]"
-                  : "bg-white text-[#be1a1f] hover:bg-gray-100"
-              }
-            ].map((button, index) => (
-              <motion.div
-                key={button.href}
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.3 + (index * 0.2) }}
-              >
-                <Link
-                  href={button.href}
-                  className={`${button.className} ${button.style}`}
-                >
-                  {button.label}
-                </Link>
+                </a>
               </motion.div>
             ))}
           </div>
@@ -183,51 +145,25 @@ const Navbar = () => {
         >
           <div className="py-4 space-y-4">
             {[
-              { href: "/", label: "Home" },
-              { href: "/sevas", label: "Sevas" },
-              { href: "/events", label: "Events" },
-              { href: "/notifications", label: "Notifications" },
-              { href: "/about", label: "About" }
+              { href: "#home", label: "Home" },
+              { href: "#features", label: "Features" },
+              { href: "#about", label: "About Us" },
+              { href: "#why-us", label: "Why Us" },
+              { href: "#contact", label: "Contact Us" }
             ].map((item) => (
-              <Link
+              <a
                 key={item.href}
                 href={item.href}
-                className={`block font-medium ${
+                onClick={(e) => scrollToElement(e, item.href.substring(1))}
+                className={`block font-medium cursor-pointer ${
                   isScrolled
                     ? "text-gray-800 hover:text-[#be1a1f]"
                     : "text-white hover:text-[#f7a604]"
                 }`}
-                onClick={() => setIsMobileMenuOpen(false)}
               >
                 {item.label}
-              </Link>
+              </a>
             ))}
-            <button
-              onClick={(e) => scrollToElement(e, 'footer')}
-              className={`block w-full text-left font-medium ${
-                isScrolled
-                  ? "text-gray-800 hover:text-[#be1a1f]"
-                  : "text-white hover:text-[#f7a604]"
-              }`}
-            >
-              Contact
-            </button>
-            <div className="pt-4 space-y-3">
-              <Link
-                href="/register"
-                className="block w-full px-6 py-2 text-center border rounded-full transition-all duration-300"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Sign Up
-              </Link>
-              <Link
-                href="/login"
-                className="block w-full px-6 py-2 text-center bg-[#be1a1f] text-white rounded-full hover:bg-[#a01217] transition-all duration-300"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Login
-              </Link>
-            </div>
           </div>
         </motion.div>
       </nav>
