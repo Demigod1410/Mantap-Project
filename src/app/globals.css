@@ -32,6 +32,15 @@ body {
   scroll-behavior: smooth;
 }
 
+/* Prevent horizontal overflow on mobile */
+@media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+  }
+}
+
 /* Custom transition classes */
 .transition-all-smooth {
   transition-property: all;
