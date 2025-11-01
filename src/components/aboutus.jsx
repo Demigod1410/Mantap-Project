@@ -77,11 +77,11 @@ const AboutUs = () => {
               variants={scaleIn}
               className="relative"
             >
-              <div className="relative w-full h-[500px] rounded-2xl overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-r from-[#be1a1f] via-[#da4d01] to-[#f7a604] opacity-20 transform rotate-3 scale-105"></div>
+              <div className="relative w-full h-[700px] rounded-2xl overflow-hidden bg-gray-50">
+                <div className="absolute inset-0 bg-gradient-to-r from-[#be1a1f] via-[#da4d01] to-[#f7a604] opacity-5 transform rotate-3 scale-105"></div>
                 <Image
-                  src="/ceremony.jpg"
-                  alt="Traditional temple ceremonies and rituals"
+                  src="/ceremony1.jpg"
+                  alt="Our Beginning"
                   fill
                   className="object-cover rounded-2xl"
                 />
