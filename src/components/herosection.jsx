@@ -170,7 +170,7 @@ const HeroSection = () => {
     >
       {/* Left Arrow Indicator */}
       <motion.div
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-30 pointer-events-none"
+        className="hidden md:block absolute left-4 top-1/2 -translate-y-1/2 z-30 pointer-events-none"
         initial={{ opacity: 0.3, x: 0 }}
         animate={{
           opacity: hoverSide === 'left' ? 0 : 0.6,
@@ -188,7 +188,7 @@ const HeroSection = () => {
 
       {/* Right Arrow Indicator */}
       <motion.div
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-30 pointer-events-none"
+        className="hidden md:block absolute right-4 top-1/2 -translate-y-1/2 z-30 pointer-events-none"
         initial={{ opacity: 0.3, x: 0 }}
         animate={{
           opacity: hoverSide === 'right' ? 0 : 0.6,
