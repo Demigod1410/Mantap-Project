@@ -216,8 +216,12 @@ const WhyUs = () => {
                 {comparisons.map((item, index) => (
                   <tr key={item.feature} className={index % 2 === 0 ? "bg-gray-50" : "bg-white"}>
                     <td className="py-4 px-6 font-medium text-gray-900">{item.feature}</td>
-                    <td className="py-4 px-6 text-[#8b1418] font-medium">✓ {item.mantap}</td>
-                    <td className="py-4 px-6 text-gray-700">{item.others}</td>
+                    <td className="py-4 px-6 text-green-600 font-medium flex items-center gap-2">
+                      <span className="text-xl">✓</span> {item.mantap}
+                    </td>
+                    <td className="py-4 px-6 text-red-600 font-medium">
+                      <span className="text-xl">✗</span> {item.others}
+                    </td>
                   </tr>
                 ))}
               </tbody>
@@ -240,11 +244,15 @@ const WhyUs = () => {
                 <div className="space-y-3">
                   <div className="flex items-start">
                     <div className="flex-shrink-0 w-20 text-sm font-semibold text-gray-600">Mantap:</div>
-                    <div className="flex-1 text-[#8b1418] font-medium">✓ {item.mantap}</div>
+                    <div className="flex-1 text-green-600 font-medium flex items-center gap-1">
+                      <span className="text-xl">✓</span> {item.mantap}
+                    </div>
                   </div>
                   <div className="flex items-start">
                     <div className="flex-shrink-0 w-20 text-sm font-semibold text-gray-600">Others:</div>
-                    <div className="flex-1 text-gray-700">{item.others}</div>
+                    <div className="flex-1 text-red-600 font-medium flex items-center gap-1">
+                      <span className="text-xl">✗</span> {item.others}
+                    </div>
                   </div>
                 </div>
               </motion.div>
