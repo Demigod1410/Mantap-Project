@@ -134,38 +134,34 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Menu */}
-        <motion.div
-          initial={{ opacity: 0, height: 0 }}
-          animate={{
-            opacity: isMobileMenuOpen ? 1 : 0,
-            height: isMobileMenuOpen ? "auto" : 0
-          }}
-          transition={{ duration: 0.3 }}
-          className="md:hidden overflow-hidden"
-        >
-          <div className="py-4 space-y-4">
-            {[
-              { href: "#home", label: "Home" },
-              { href: "#features", label: "Features" },
-              { href: "#about", label: "About Us" },
-              { href: "#why-us", label: "Why Us" },
-              { href: "#contact", label: "Contact Us" }
-            ].map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                onClick={(e) => scrollToElement(e, item.href.substring(1))}
-                className={`block font-medium cursor-pointer ${
-                  isScrolled
-                    ? "text-gray-800 hover:text-[#be1a1f]"
-                    : "text-white hover:text-[#f7a604]"
-                }`}
-              >
-                {item.label}
-              </a>
-            ))}
-          </div>
-        </motion.div>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.2 }}
+            className="md:hidden mt-4"
+          >
+            <div className="py-2 space-y-1 bg-white/95 backdrop-blur-sm rounded-lg shadow-lg">
+              {[
+                { href: "#home", label: "Home" },
+                { href: "#features", label: "Features" },
+                { href: "#about", label: "About Us" },
+                { href: "#why-us", label: "Why Us" },
+                { href: "#contact", label: "Contact Us" }
+              ].map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  onClick={(e) => scrollToElement(e, item.href.substring(1))}
+                  className="block px-4 py-3 font-medium text-gray-800 hover:text-[#be1a1f] hover:bg-gray-50 rounded transition-colors cursor-pointer"
+                >
+                  {item.label}
+                </a>
+              ))}
+            </div>
+          </motion.div>
+        )}
       </nav>
     </motion.header>
   );
