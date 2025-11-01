@@ -13,22 +13,22 @@ const HeroSection = () => {
   // Features and Why Us content
   const features = [
     { 
-      icon: "🏠", 
+      icon: <svg className="w-8 h-8" fill="#fec106" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>, 
       text: "Home Page",
       description: "Quick access to sevas, notifications, and an easy navigation menu"
     },
     { 
-      icon: "🙏", 
+      icon: <svg className="w-8 h-8" fill="#fec106" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg>, 
       text: "Seva Booking",
       description: "Browse and book daily, monthly, or special sevas effortlessly"
     },
     { 
-      icon: "✨", 
+      icon: <svg className="w-8 h-8" fill="#fec106" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>, 
       text: "Donations & Events",
       description: "A one-stop space for making donations and viewing upcoming events"
     },
     { 
-      icon: "🔔", 
+      icon: <svg className="w-8 h-8" fill="#fec106" viewBox="0 0 24 24"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/></svg>, 
       text: "Personalized Notifications",
       description: "Get timely updates on sevas, events, and booking reminders"
     },
@@ -36,27 +36,27 @@ const HeroSection = () => {
 
   const templeFeatures = [
     { 
-      icon: "📊", 
+      icon: <svg className="w-8 h-8" fill="#fec106" viewBox="0 0 24 24"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/></svg>, 
       text: "Dashboard View",
       description: "A comprehensive overview of temple activities (donations, bookings, and participation, etc.)"
     },
     { 
-      icon: "📅", 
+      icon: <svg className="w-8 h-8" fill="#fec106" viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>, 
       text: "Seva Booking",
       description: "Organize and update seva details with ease, tracking availability and reminders"
     },
     { 
-      icon: "📈", 
+      icon: <svg className="w-8 h-8" fill="#fec106" viewBox="0 0 24 24"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/></svg>, 
       text: "Smart Reporting",
       description: "Access real-time insights on revenue, seva popularity, and donor activity"
     },
     { 
-      icon: "🏛️", 
+      icon: <svg className="w-8 h-8" fill="#fec106" viewBox="0 0 24 24"><path d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z"/></svg>, 
       text: "Multi Branch Control",
       description: "Manage operations across multiple temple branches from one centralized dashboard"
     },
     { 
-      icon: "📦", 
+      icon: <svg className="w-8 h-8" fill="#fec106" viewBox="0 0 24 24"><path d="M20 2H4c-1 0-2 .9-2 2v3.01c0 .72.43 1.34 1 1.69V20c0 1.1 1.1 2 2 2h14c.9 0 2-.9 2-2V8.7c.57-.35 1-.97 1-1.69V4c0-1.1-1-2-2-2zm-5 12H9v-2h6v2zm5-7H4V4h16v3z"/></svg>, 
       text: "Asset Mapping",
       description: "Categorize and track temple assets for optimized and efficient utilization"
     }
@@ -146,7 +146,7 @@ const HeroSection = () => {
         transition={{ delay: index * 0.1 }}
         className="flex items-start space-x-4 mb-8"
       >
-        <span className="text-3xl mt-1">{item.icon}</span>
+        <div className="mt-1">{item.icon}</div>
         <div className="flex flex-col">
           <span className="text-xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
             {item.text}
