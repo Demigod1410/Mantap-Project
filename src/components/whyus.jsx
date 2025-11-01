@@ -22,32 +22,32 @@ const WhyUs = () => {
 
   const benefits = [
     {
-      icon: "🏛️",
+      icon: <svg className="w-10 h-10" fill="#c1201e" viewBox="0 0 24 24"><path d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z"/></svg>,
       title: "A Bridge, Not Just Software",
       description: "We offer temples independent, branded digital spaces while delivering devotees a smooth, transparent, and trusted experience."
     },
     {
-      icon: "💰",
+      icon: <svg className="w-10 h-10" fill="#c1201e" viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg>,
       title: "Transparent, Direct Donations",
       description: "Donations go straight from devotees to temple accounts, with full transparency and no middlemen."
     },
     {
-      icon: "⚡",
+      icon: <svg className="w-10 h-10" fill="#c1201e" viewBox="0 0 24 24"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg>,
       title: "Holistic Temple Management",
       description: "Support for every aspect of temple administration—from seva bookings to event management—simplifying daily operations."
     },
     {
-      icon: "📈",
+      icon: <svg className="w-10 h-10" fill="#c1201e" viewBox="0 0 24 24"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/></svg>,
       title: "Scalability and Flexibility",
       description: "Adapts smoothly to every size and need, from single temples to large multi-branch trusts."
     },
     {
-      icon: "📱",
+      icon: <svg className="w-10 h-10" fill="#c1201e" viewBox="0 0 24 24"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg>,
       title: "Devotee-Centric Experience",
       description: "Easy access to seva booking, donations, prasadam shopping, and event notifications from anywhere."
     },
     {
-      icon: "🤝",
+      icon: <svg className="w-10 h-10" fill="#c1201e" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>,
       title: "Community-Focused Approach",
       description: "Join a movement built on respect, transparency, and preservation of our shared cultural heritage."
     }
@@ -172,7 +172,7 @@ const WhyUs = () => {
                 custom={index * 0.2}
                 className="bg-gray-50 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-[#be1a1f]/30"
               >
-                <div className="text-4xl mb-4">{benefit.icon}</div>
+                <div className="mb-4">{benefit.icon}</div>
                 <h3 className="text-xl font-bold mb-4 text-gray-900">{benefit.title}</h3>
                 <p className="text-gray-700 leading-relaxed">{benefit.description}</p>
               </motion.div>
